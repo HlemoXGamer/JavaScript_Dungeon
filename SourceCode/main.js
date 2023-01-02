@@ -1095,3 +1095,552 @@ Challenge #063
 // showDetails(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
 // showDetails(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
 */
+
+/*
+Video #064 Anonymous Function
+let calculator = function (num1, num2) {
+  return num1 + num2;
+};
+
+console.log(calculator(10, 20));
+
+function sayHello() {
+  console.log("Hello Osama");
+}
+
+document.getElementById("ID Name").onclick = sayHello;
+document.getElementById("ID Name").onclick = function () {
+  console.log("Wassup");
+};
+
+setTimeout(function () {
+  console.log("Hello");
+}, 2000);
+*/
+
+/*
+Video #065 Return Nested Function
+// Example 1
+
+// function sayMessage(fName, lName) {
+//   let message = "Hello";
+//   function concatMsg() {
+//     message = `${message} ${fName} ${lName}`;
+//   }
+//   concatMsg();
+//   return message;
+// }
+// console.log(sayMessage("Osama", "Mohamed"));
+
+// Example 2
+
+// function sayMessage(fName, lName) {
+//   let message = "Hello";
+//   function concatMsg() {
+//     return `${message} ${fName} ${lName}`;
+//   }
+//   return concatMsg();
+// }
+// console.log(sayMessage("Osama", "Mohamed"));
+
+// Example 3
+
+// function sayMessage(fName, lName) {
+//   let message = "Hello";
+//   function concatMsg() {
+//     function getFullName() {
+//       return `${fName} ${lName}`;
+//     }
+//     return `${message} ${getFullName()}`;
+//   }
+//   return concatMsg();
+// }
+// console.log(sayMessage("Osama", "Mohamed"));
+*/
+
+/*
+Video #066 Arrow Function Syntax
+// let print = function () {
+//   return 10;
+// };
+
+// let print = () => 10;
+
+// let print = function (num) {
+//   return num;
+// };
+
+// let print = (num) => num;
+
+// let print = function (num1, num2) {
+//   return num1 + num2;
+// };
+
+// let print = (num1, num2) => num1 + num2;
+
+// console.log(print(100, 50));
+*/
+
+/*
+Video #067 Scope - Global And Local
+// var a = 1;
+// let b = 2;
+
+// function showText() {
+//   var a = 10;
+//   let b = 20;
+//   console.log(`Function - From Local ${a}`);
+//   console.log(`Function - From Local ${b}`);
+// }
+
+// console.log(`From Global ${a}`);
+// console.log(`From Global ${b}`);
+
+// showText();
+*/
+
+/*
+Video #068 Scope - Block
+var x = 10;
+
+if (true) {
+  let x = 50;
+}
+
+console.log(x);
+*/
+
+/*
+Video #069 Scope - Lexical
+function parent() {
+  let a = 10;
+
+  function child() {
+    console.log(a);
+
+    function grand() {
+      let b = 100;
+      console.log(`From Grand ${a}`);
+      console.log(`From Grand ${b}`);
+    }
+    grand();
+  }
+  child();
+}
+parent();
+*/
+
+/*
+Challenge #070 Arrow Function 
+// Challenge 1
+// let names = function (...names) {
+//   return `String [${names.join("], [")}] => Done !`;
+// };
+// console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+
+// names = (...names) => `String [${names.join("], [")}] => Done !`;
+// console.log(names("Osama", "Mohamed", "Ali", "Ibrahim"));
+
+//Challenge 2
+
+// let myNumbers = [20, 50, 10, 60];
+// let calc = (one, two, ...nums) => one + two + parseInt(nums);
+// console.log(calc(10, myNumbers[0], myNumbers[1]));
+*/
+
+/*
+Video #071 High Order Function - Map
+let myNums = [1, 2, 3, 4, 5, 6];
+
+let newArray = [];
+
+for (let i = 0; i < myNums.length; i++) {
+  newArray.push(myNums[i] + myNums[i]);
+}
+
+console.log(newArray);
+
+// let addSelf = myNums.map(function (element, index, array) {
+//   return element + element;
+// }, 10);
+
+// let addSelf = myNums.map((element) => element + element);
+// console.log(addSelf);
+
+function addition(element) {
+  return element + element;
+}
+
+let add = myNums.map(addition);
+console.log(add);
+*/
+
+/*
+Video #072 High Order Function - Map - Practice
+let swappingCases = "elZERo";
+let invertedNumbers = [1, -10, -20, 15, 100, -30];
+let ignoreNumbers = "Elz123er4o";
+
+// let sw = swappingCases
+//   .split("")
+//   .map(function (element) {
+//     return element === element.toUpperCase()
+//       ? element.toLowerCase()
+//       : element.toUpperCase();
+//   })
+//   .join("");
+
+// Arrow Function Version
+let sw = swappingCases
+  .split("")
+  .map((a) => (a === a.toUpperCase() ? a.toLowerCase() : a.toUpperCase()))
+  .join("");
+console.log(sw);
+
+// let inv = invertedNumbers.map(function (element) {
+//   return -element;
+// });
+
+// Arrow Function Version
+
+let inv = invertedNumbers.map((a) => -a);
+console.log(inv);
+
+// let ign = ignoreNumbers
+//   .split("")
+//   .map(function (element) {
+//     return isNaN(parseInt(element)) ? element : "";
+//   })
+//   .join("");
+
+// Arrow Function Version
+
+let ign = ignoreNumbers
+  .split("")
+  .map((a) => (isNaN(parseInt(a)) ? a : ""))
+  .join("");
+
+console.log(ign);
+*/
+
+/*
+Video #073 Higher Order Function - Filter
+let friends = ["Ahmed", "Sameh", "Sayed", "Asmaa", "Amgad", "Israa"];
+let filterFriends = friends.filter(function (e) {
+  return e.startsWith("A");
+});
+console.log(filterFriends);
+
+let numbers = [11, 20, 2, 5, 17, 10];
+
+let evenNumbers = numbers.filter(function (e) {
+  return e % 2 === 0;
+});
+
+console.log(evenNumbers);
+
+// Map VS Filter
+
+// let addMap = numbers.map(function (element) {
+//   return element + element;
+// });
+// console.log(addMap);
+
+// let addfilter = numbers.filter(function (element) {
+//   return element + element;
+// });
+// console.log(addMap);
+*/
+
+/*
+Video #074 Higher Order Function - Filter - Practice
+let sentence = "I Love Foood Code Too Playing Much";
+
+let smallWords = sentence
+  .split(" ")
+  .filter(function (e) {
+    return e.length <= 4;
+  })
+  .join(" ");
+
+console.log(smallWords);
+
+let ignoreNumbers = "Elz123er4o";
+
+let ign = ignoreNumbers
+  .split("")
+  .filter(function (e) {
+    return isNaN(parseInt(e));
+  })
+  .join("");
+
+console.log(ign);
+
+let mix = "A13BS2ZX";
+
+let mixedContent = mix
+  .split("")
+  .filter(function (e) {
+    return !isNaN(parseInt(e));
+  })
+  .map(function (e) {
+    return e * e;
+  })
+  .join("");
+
+console.log(mixedContent);
+*/
+
+/*
+Video #075 Higher Order Function - Reduce
+let nums = [10, 20, 15, 30];
+
+let add = nums.reduce(function (acc, current, index, arr) {
+  return acc + current;
+}, 5);
+
+console.log(add);
+*/
+
+/*
+Video #076 Higher Order Function - Reduce - Practice
+let theBiggest = ["Bla", "Propaganda", "Other", "AAA", "Battery", "Test"];
+
+let check = theBiggest.reduce(function (acc, current) {
+  return acc.length > current.length ? acc : current;
+});
+
+console.log(check);
+
+let removeChars = ["E", "@", "@", "L", "Z", "@", "@", "E", "R", "@", "O"];
+
+let finalString = removeChars
+  .filter(function (ele) {
+    return !ele.startsWith("@");
+  })
+  .reduce(function (acc, current) {
+    return `${acc}${current}`;
+  });
+
+console.log(finalString);
+*/
+
+/*
+Video #077 Higher Order Function - ForEach And Practice
+let allLis = document.querySelectorAll("ul li");
+let allDivs = document.querySelectorAll(".content div");
+
+allLis.forEach(function (e) {
+  e.onclick = function () {
+    allLis.forEach(function (e) {
+      e.classList.remove("active");
+    });
+    this.classList.add("active");
+    allDivs.forEach(function (e) {
+      e.style.display = "none";
+    });
+  };
+});
+*/
+
+/*
+Challenge #078 Higher Order Function - Challenge
+let myString = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+let zLetter = myString[myString.length - true];
+
+let solution = myString
+  .split("")
+  .filter(function (e) {
+    return isNaN(parseInt(e)) && e !== zLetter;
+  })
+  .map(function (e) {
+    return e.startsWith(",")
+      ? (e = "")
+      : (e = e) && e.startsWith("_")
+      ? (e = " ")
+      : (e = e);
+  })
+  .reduce(function (acc, cur) {
+    return acc === cur ? acc : acc + cur;
+  });
+
+console.log(solution);
+*/
+
+/*
+Video #079 Object - Intro
+let user = {
+  theName: "Osama",
+  theAge: 38,
+
+  sayHello: function () {
+    return `Hello`;
+  },
+};
+
+console.log(user.theName);
+console.log(user.theAge);
+console.log(user.sayHello);
+*/
+
+/*
+Video #080 Dot Notation vs Bracket Notation
+let myVar = "country";
+
+let user = {
+  theName: "Osama",
+  country: "Egypt",
+};
+
+console.log(user.theName);
+console.log(user.country);
+console.log(user.myVar);
+console.log(user[myVar]);
+*/
+
+/*
+Video #081 Nested Object And Advanced Trainings
+let user = {
+  name: "Osama",
+  age: 38,
+  skills: ["html", "css", "js"],
+  available: false,
+  addresses: {
+    ksa: "Riyad",
+    egypt: {
+      one: "cairo",
+      two: "giza",
+    },
+  },
+  checkav: function () {
+    if (user.available === true) {
+      return `Free For Work`;
+    } else {
+      return `Not Available`;
+    }
+  },
+};
+
+console.log(user.name);
+console.log(user.age);
+console.log(user.skills);
+console.log(user.skills.join(" | "));
+console.log(user.skills[2]);
+console.log(user.addresses.ksa);
+console.log(user.addresses.egypt);
+console.log(user["addresses"].egypt.one);
+console.log(user["addresses"]["egypt"]);
+console.log(user["addresses"]["egypt"]["one"]);
+console.log(user.checkav());
+*/
+
+/*
+Video #082 Create Object With New Keyword
+let user = new Object({
+  age: 20,
+});
+
+console.log(user);
+
+user.age = 38;
+user["country"] = "Egypt";
+
+user.sayHello = function () {
+  return `Hello`;
+};
+
+console.log(user);
+console.log(user.age);
+console.log(user.country);
+console.log(user.sayHello());
+*/
+
+/*
+Video #083 This Keyword
+console.log(this);
+console.log(this === window);
+
+myvar = 100;
+
+console.log(window.myvar);
+console.log(this.myvar);
+
+function sayHello() {
+  console.log(this);
+}
+sayHello();
+
+console.log(sayHello() === window);
+
+document.getElementById("cl").onclick = function () {
+  console.log(this);
+};
+
+let user = {
+  age: 38,
+  ageInDays: function () {
+    return this.age * 365;
+  },
+};
+
+console.log(user.age);
+console.log(user.ageInDays());
+*/
+
+/*
+Video #084 Create Object With Create Method
+let user = {
+  age: 40,
+  doubleAge: function () {
+    return user.age * 2;
+  },
+};
+
+console.log(user);
+console.log(user.age);
+console.log(user.doubleAge());
+
+let obj = Object.create({});
+
+obj.a = 100;
+
+console.log(obj);
+
+let copyObj = Object.create(user);
+
+console.log(copyObj);
+console.log(copyObj.age);
+console.log(copyObj.doubleAge());
+*/
+
+/*
+Video #084 Create Object With Assign Method
+let obj1 = {
+  prop1: 1,
+  meth1: function () {
+    return this.prop1;
+  },
+};
+let obj2 = {
+  prop2: 2,
+  meth1: function () {
+    return this.prop2;
+  },
+};
+
+let targetObject = {
+  prop1: 100,
+  prop3: 3,
+};
+
+let finalObject = Object.assign(targetObject, obj1, obj2);
+
+finalObject.prop1 = 200;
+finalObject.prop4 = 4;
+
+console.log(finalObject);
+
+let newObject = Object.assign({}, obj1, { prop5: 5, prop6: 6 });
+
+console.log(newObject);
+*/
