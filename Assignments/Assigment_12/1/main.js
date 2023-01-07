@@ -1,0 +1,15 @@
+console.log(document.getElementById("elzero"));
+console.log(document.getElementsByClassName("element"));
+console.log(document.getElementsByClassName("element")[0]);
+console.log(document.getElementsByName("js"));
+console.log(document.getElementsByName("js")[0]);
+console.log(document.getElementsByTagName("div"));
+console.log(document.getElementsByTagName("div")[0]);
+console.log(document.querySelector("div"));
+console.log(document.querySelector('[name="js"]'));
+console.log(document.querySelector('[id="elzero"]'));
+console.log(document.querySelector('[class="element"]'));
+console.log(document.querySelectorAll("div")[0]);
+console.log(document.querySelectorAll('[name="js"]')[0]);
+console.log(document.querySelectorAll('[id="elzero"]')[0]);
+console.log(document.querySelectorAll('[class="element"]')[0]);

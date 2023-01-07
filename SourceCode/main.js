@@ -1614,7 +1614,7 @@ console.log(copyObj.doubleAge());
 */
 
 /*
-Video #084 Create Object With Assign Method
+Video #085 Create Object With Assign Method
 let obj1 = {
   prop1: 1,
   meth1: function () {
@@ -1643,4 +1643,540 @@ console.log(finalObject);
 let newObject = Object.assign({}, obj1, { prop5: 5, prop6: 6 });
 
 console.log(newObject);
+*/
+
+/*
+Video #086 What Is DOM And Select Elements
+let myIdElement = document.getElementById("my-div");
+let myTagElements = document.getElementsByTagName("p");
+let myClassElement = document.getElementsByClassName("my-span");
+let myQueryElement = document.querySelector(".my-span");
+let myQueryAllElements = document.querySelectorAll(".my-span");
+
+console.log(myIdElement);
+console.log(myTagElements);
+console.log(myClassElement[0]);
+console.log(myClassElement[1]);
+console.log(myQueryElement);
+console.log(myQueryAllElements[1]);
+
+console.log(document.title);
+console.log(document.body);
+console.log(document.forms[0].one.value);
+console.log(document.links[1].href);
+*/
+
+/*
+Video #087 Get Set Elements Content And Attributes
+let myElement = document.querySelector(".js");
+
+console.log(myElement.innerHTML);
+console.log(myElement.textContent);
+
+myElement.innerHTML = "Text From <span>Main.Js</span> File.";
+myElement.textContent = "Text From <span>Main.Js</span> File.";
+
+document.images[0].src = "https://google.com";
+document.images[0].alt = "Alternate";
+document.images[0].title = "Picture";
+document.images[0].id = "pic";
+document.images[0].className = "img";
+
+let myLink = document.querySelector(".link");
+
+console.log(myLink.getAttribute("class"));
+console.log(myLink.getAttribute("href"));
+
+myLink.setAttribute("href", "https://twitter.con");
+myLink.setAttribute("title", "Twitter");
+
+*/
+
+/*
+Video #088 Check Attributes And Examples
+console.log(document.getElementsByTagName("p")[0].attributes);
+
+let myP = document.getElementsByTagName("p")[0];
+
+if (myP.hasAttribute("data-src")) {
+  if (myP.getAttribute("data-src") === "") {
+    myP.removeAttribute("data-src");
+  } else {
+    myP.setAttribute("data-src", "New Value");
+  }
+} else {
+  console.log(`Not Found`);
+}
+
+if (myP.hasAttributes()) {
+  console.log(`Has Attributes`);
+}
+
+if (document.getElementsByTagName("div")[0].hasAttributes()) {
+  console.log(`Has Attributes`);
+} else {
+  console.log(`Div Has No Attibutes`);
+}
+*/
+
+/*
+Video #089 Create And Append Elements
+let myElement = document.createElement("div");
+let myAttr = document.createAttribute("data-custom");
+let myText = document.createTextNode("Product One");
+let myComment = document.createComment("This Is Div");
+
+myElement.className = "product";
+myElement.setAttributeNode(myAttr);
+myElement.setAttribute("data-test", "Testing");
+
+// Append Comment To Element
+myElement.appendChild(myComment);
+
+// Append Text To Element
+myElement.appendChild(myText);
+
+//append Element to Body
+document.body.appendChild(myElement);
+
+console.log(myElement);
+
+console.log("Wassup");
+*/
+
+/*
+Video #090 Product With Title And Description Practice
+//My Way
+// for (let i = 1; i <= 100; i++) {
+//   let myDiv = document.createElement("div");
+//   myDiv.className = "Product";
+//   myDiv.innerHTML = `<h3>Product Title ${i}</h3> <p>Product Description</p>`;
+//   document.body.appendChild(myDiv);
+// }
+
+//Elzero Way
+// for (let i = 1; i <= 100; i++) {
+//   let myMainElement = document.createElement("div");
+//   let myHeading = document.createElement("h3");
+//   let myPara = document.createElement("p");
+
+//   let myHeadingText = document.createTextNode("Product Title" + " " + i);
+//   let myParagraphText = document.createTextNode("Product Description");
+
+//   myHeading.appendChild(myHeadingText);
+//   myMainElement.appendChild(myHeading);
+//   myPara.appendChild(myParagraphText);
+//   myMainElement.appendChild(myPara);
+
+//   myMainElement.className = "product";
+
+//   document.body.appendChild(myMainElement);
+// }
+*/
+
+/*
+Video #091 Deal With Child
+let myElement = document.querySelector("div");
+
+console.log(myElement);
+console.log(myElement.children);
+console.log(myElement.children[0]);
+console.log(myElement.childNodes);
+console.log(myElement.childNodes[0]);
+
+console.log(myElement.firstChild);
+console.log(myElement.lastChild);
+
+console.log(myElement.firstElementChild);
+console.log(myElement.lastElementChild);
+*/
+
+/*
+Video #092 DOM Events
+// onclick;
+// oncontextmenu;
+// onmouseenter;
+// onmouseleave;
+
+// onload;
+// onscroll;
+// onresize;
+
+// onfocus;
+// onblur;
+// onsubmit;
+let myBtn = document.getElementById("btn");
+
+myBtn.onclick = function () {
+  console.log("Clicked!");
+};
+*/
+
+/*
+Video #093 Validate Form And Prevent Defualt
+let userInput = document.querySelector("[name='username']");
+let ageInput = document.querySelector("[name='age']");
+
+document.forms[0].onsubmit = function (e) {
+  let userValid = false;
+  let ageValid = false;
+
+  if (userInput.value !== "" && userInput.value.length <= 10) {
+    userValid = true;
+  }
+
+  if (ageInput.value !== "") {
+    ageValid = true;
+  }
+
+  if (userValid === false || ageValid === false) {
+    e.preventDefault();
+  }
+};
+
+document.links[0].onmouseenter = function (event) {
+  console.log(event);
+  event.preventDefault();
+};
+*/
+
+/*
+Video #094 Event Simulation - Click Focus Blur
+let one = document.querySelector(".one");
+let two = document.querySelector(".two");
+
+window.onload = function () {
+  two.focus();
+};
+
+one.onblur = function () {
+  document.links[0].click();
+};
+*/
+
+/*
+Video #095 Class List Object And Methods
+let element = document.getElementById("my-div");
+
+console.log(element.classList);
+console.log(typeof element.classList);
+console.log(element.classList.contains("osama"));
+console.log(element.classList.contains("show"));
+console.log(element.classList.item("0"));
+console.log(element.classList.item("3"));
+
+element.onclick = function () {
+  element.classList.toggle("osama");
+};
+*/
+
+/*
+Video #096 CSS Styling And Stylesheets
+let element = document.getElementById("my-div");
+
+element.style.color = "red";
+element.style.fontWeight = "bold";
+
+element.style.cssText = "font-weight:bold; color: #089089; opacity: 0.9";
+
+element.style.removeProperty("color");
+element.style.setProperty("font-size", "40px", "important");
+
+document.styleSheets[3].rules[0].style.removeProperty("line-height");
+document.styleSheets[3].rules[0].style.setProperty("background-color", "red ");
+*/
+
+/*
+Video #097 Before, After, Prepend, Append, Remove
+let element = document.getElementById("my-div");
+let createdP = document.createElement("p");
+
+element.before("Wassup From JS");
+element.after(createdP);
+element.append("Hello From Js");
+element.prepend(createdP);
+element.remove();
+*/
+
+/*
+Video #098 DOM Traversing
+let span = document.querySelector(".two");
+
+console.log(span.nextElementSibling);
+console.log(span.previousElementSibling);
+
+console.log(span.nextSibling);
+console.log(span.previousSibling);
+
+span.onclick = function () {
+  span.parentElement.remove();
+};
+*/
+
+/*
+Video #099 DOM Cloning
+let myP = document.querySelector("p").cloneNode(true);
+let myDiv = document.querySelector("div");
+
+myP.id = `${myP.id}-clone`;
+
+myDiv.appendChild(myP);
+*/
+
+/*
+Video #100
+let myP = document.querySelector("p");
+
+// myP.onclick = one;
+// myP.onclick = two;
+
+// function one() {
+//   console.log("Wassup From OnClick 1");
+// }
+// function two() {
+//   console.log("Wassup From OnClick 2");
+// }
+
+// window.onload = "Osama";
+
+// myP.addEventListener("click", function () {
+//   console.log("Wassup From OnClock 1 Event");
+// });
+
+// myP.addEventListener("click", one);
+// myP.addEventListener("click", two);
+
+myP.onclick = function () {
+  let newP = myP.cloneNode(true);
+  newP.className = "clone";
+  document.body.appendChild(newP);
+};
+
+// let cloned = document.querySelector(".clone");
+
+// cloned.onclicked = function () {
+//   console.log("i'm Cloned");
+// };
+
+document.addEventListener("click", function (e) {
+  if (e.target.className === "clone") {
+    console.log("i'm Cloned");
+  }
+});
+*/
+
+/*
+Challenge #101
+*/
+// Solved In External Folders
+
+/*
+Video #102 What is BOM
+*/
+
+/*
+Video #103 Alert - Confirm - Prompt
+// alert("test")
+
+// let confirmMsg = confirm("Are You Sure?");
+
+// confirmMsg === true
+//   ? console.log("Item Deleted")
+//   : console.log("Item Submited");
+
+// let promptMsg = prompt("Good Day For You?");
+
+// console.log(promptMsg);
+*/
+
+/*
+Video #104 setTimeout And clearTimeout
+// setTimeout(function () {
+//   let a = document.createElement("h1");
+//   a.innerHTML = "Wat R U Lookin' At U Stupid Son Of Bitch !!";
+//   a.style.fontSize = "90px";
+//   document.body.appendChild(a);
+// }, 3000);
+
+// setTimeout(sayHello, 3000);
+
+// function sayHello() {
+//   let a = document.createElement("h1");
+//   a.innerHTML = "Willy Wanka Say Helloooo :)";
+//   a.style.fontSize = "90px";
+//   document.body.appendChild(a);
+// }
+
+// setTimeout(sayHello, 3000, "Your Fat Mother", 150);
+
+// function sayHello(user, age) {
+//   let a = document.createElement("h1");
+//   a.innerHTML = "This Is Message From" + " " + user;
+//   a.style.fontSize = "90px";
+//   document.body.appendChild(a);
+// }
+
+let counter = setTimeout(sayHello, 3000);
+
+function sayHello() {
+  let a = document.createElement("h1");
+  a.innerHTML = "This Is Message From Your Fat Mother";
+  a.style.fontSize = "90px";
+  document.body.appendChild(a);
+}
+
+let btn = document.querySelector("button");
+
+btn.onclick = function () {
+  clearTimeout(counter);
+};
+*/
+
+/*
+Video #105 setInterval and ClearInterval
+let div = document.querySelector("div");
+
+function countdown() {
+  div.innerHTML -= 1;
+  if (div.innerHTML === "0") {
+    clearInterval(counter);
+  }
+}
+
+let counter = setInterval(countdown, 1000);
+*/
+
+/*
+Video #106 Window Location Object
+location.href = "https://google.com";
+location.href = "/#sec02";
+
+console.log(location.host);
+console.log(location.hostname);
+
+console.log(location.protocol);
+
+console.log(location.hash);
+
+location.reload();
+
+location.replace("https://google.com");
+location.assign("elzero.org");
+*/
+
+/*
+Video #107 Window Open And Close
+//window.close()
+//window.open("", "", "", "");
+*/
+
+/*
+Video #108 Window History Object
+*/
+
+/*
+Video #109 Scroll, ScrollTo, ScrollBy, Focus, Print, Stop
+// window.scrollTo({
+//   left: 500,
+//   top: 200,
+//   behavior: "smooth",
+// });
+
+// window.scrollBy({
+//   left: 500,
+//   top: 200,
+//   behavior: "smooth",
+// });
+*/
+
+/*
+Video #110 Scroll To Top Using Y Practice
+// let btn = document.querySelector("button");
+
+// window.onscroll = function () {
+//   if (window.scrollY >= 600) {
+//     btn.style.display = "block";
+//   } else {
+//     btn.style.display = "none";
+//   }
+// };
+
+// btn.onclick = function () {
+//   window.scrollTo({
+//     top: 0,
+//     left: 0,
+//     behavior: "smooth",
+//   });
+// };
+*/
+
+/*
+Video #111 Local Storage
+// Set
+window.localStorage.setItem("color", "#F00");
+window.localStorage.fontWeight = "bold";
+window.localStorage["fontSize"] = "20px";
+
+// Get
+console.log(window.localStorage.getItem("color"));
+console.log(window.localStorage.color);
+console.log(window.localStorage["color"]);
+
+//Remove one
+//window.localStorage.removeItem("color")
+
+//Remove All
+//window.localStorage.clear()
+
+// Get Key
+console.log(window.localStorage.key(0));
+
+// Set Color In Page
+document.body.style.backgroundColor = window.localStorage.getItem("color");
+*/
+
+/*
+Video #112 Local Storage And Color Application Practice
+let lis = document.querySelectorAll("li");
+let exp = document.querySelector(".experiment");
+
+if (window.localStorage.getItem("color")) {
+  // Add Color To Div
+  exp.style.backgroundColor = window.localStorage.getItem("color");
+  // Remove Active Class From All Lis
+  lis.forEach(function (li) {
+    li.classList.remove("active");
+  });
+  // Add Active Class To Current Color
+  document
+    .querySelector(`[data-color="${window.localStorage.getItem("color")}"]`)
+    .classList.add("active");
+}
+
+lis.forEach(function (li) {
+  li.addEventListener("click", function (el) {
+    // el.currentTarget.dataset.color
+    // Remove Active Class From All Lis
+    lis.forEach(function (li) {
+      li.classList.remove("active");
+    });
+    // Add active Class To Current Element
+    el.currentTarget.classList.add("active");
+    // Add Current Color To Local Storage
+    window.localStorage.setItem("color", el.currentTarget.dataset.color);
+    // Change Div Background Color
+    exp.style.backgroundColor = el.currentTarget.dataset.color;
+  });
+});
+*/
+
+/*
+Video #113 Session Storage And UseCases
+window.localStorage.setItem("color", "red");
+window.sessionStorage.setItem("color", "blue");
+// Same LocalStorage Attributes
+*/
+
+/*
+Challenge #114 BOM
 */
